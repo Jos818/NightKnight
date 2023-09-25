@@ -1,25 +1,16 @@
+//Timeline Resume.cs by Joseph Panara for Green Thumb
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Interacts with the TimelineController script. When the object is enabled, the timeline resumes playing from the point it was paused
 public class TimelineResume : MonoBehaviour
 {
-
     public TimelineController timelinecontroller;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    
+
     void OnEnable()
     {
         timelinecontroller.Resume();
         gameObject.SetActive(false);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

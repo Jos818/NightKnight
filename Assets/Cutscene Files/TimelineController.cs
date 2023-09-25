@@ -1,27 +1,22 @@
-using System.Collections;
+//TimelineController.cs by Joseph Panara for Night Knight
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
+//Manages the Unity Timeline-based cutscenes. Pauses and resumes the timeline
 public class TimelineController : MonoBehaviour
 {
     public GameObject timeline;
     float pausespeed = 0;
     float resumespeed = 1;
     public PlayableDirector director;
-    // Start is called before the first frame update
+
     void Start()
     {
         director = timeline.GetComponent<PlayableDirector>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void  Pause()
+    public void Pause()
     {
         director.playableGraph.GetRootPlayable(0).SetSpeed(pausespeed);
     }

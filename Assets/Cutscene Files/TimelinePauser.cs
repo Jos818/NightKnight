@@ -1,24 +1,15 @@
+//TimelinePauser.cs by Joseph Panara for Night Knight
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Interacts with the TimelineController script. When the object is enabled, the timeline pauses
 public class TimelinePauser : MonoBehaviour
 {
     public TimelineController timelinecontroller;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     void OnEnable()
-    { 
-        timelinecontroller.Pause();
-    }
-
-    // Update is called once per frame
-    void Update()
     {
-        
+        timelinecontroller.Pause();
     }
 }
