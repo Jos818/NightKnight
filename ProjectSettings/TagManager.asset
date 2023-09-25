@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - ground
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Torch
+  - Water
+  - UI
+  - GroundCheck
+  - 
+  - Ground
+  - 
+  - Enemy
+  - Summon
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2841737247
+    locked: 0
+  - name: Collision
+    uniqueID: 3280775991
+    locked: 0
+  - name: Enemy
+    uniqueID: 1397831715
+    locked: 0
+  - name: Player
+    uniqueID: 894269947
+    locked: 0

@@ -1,0 +1,1 @@
+[NAME=Sir Steve][SPEAKERSPRITE=Sir Steve][PITCH=1]What on earth?!

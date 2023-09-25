@@ -1,0 +1,5 @@
+[NAME=Undead Executioner][SPEAKERSPRITE=Undead Executioner][PITCH=3]Silence.
+The Solstice Vanguard. You shall make an excellent appetizer before we consume what remains of your country.
+[NAME=Sir Jim][SPEAKERSPRITE=Sir Jim][PITCH=2]Hah! You think you've won?
+Pathetic. You've won nothing but the wrath of the Solstice Vanguard!
+No one can defeat the might of what is true and right!

@@ -1,0 +1,4 @@
+[NAME=Sir Steve][SPEAKERSPRITE=Sir Steve][PITCH=2]This can't be how it ends.
+The Solstice Vanguard, our country's greatest protectors, captured by the enemy.
+[NAME=Sir Jim][SPEAKERSPRITE=Sir Jim][PITCH=2]Fear not Sir Steve, we will yet emerge victorious!
+No army of the undead can hope to contain the Solstice Vanguard!

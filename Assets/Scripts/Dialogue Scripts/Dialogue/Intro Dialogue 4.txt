@@ -1,0 +1,4 @@
+[NAME=Sir Steve][SPEAKERSPRITE=Sir Steve][PITCH=1]Jim!!
+[NAME=Undead Executioner][SPEAKERSPRITE=Undead Executioner][PITCH=3]Death comes for all eventually.
+Take the prisoners to the Ritual Chamber to be sacrificed.
+[NAME=Sir Steve][SPEAKERSPRITE=Sir Steve][PITCH=1]No!

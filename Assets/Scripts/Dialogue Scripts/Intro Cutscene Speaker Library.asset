@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e72bbbcbf271e4a926de745b3cbe63, type: 3}
+  m_Name: Intro Cutscene Speaker Library
+  m_EditorClassIdentifier: 
+  speakerLibrary:
+  - name: Sir Steve
+    sprite: {fileID: 471246167, guid: e7a872ceb404eec4fa34b94b4cfbc891, type: 3}
+  - name: Sir Jim
+    sprite: {fileID: 21300000, guid: 7770cdd7840ea694f85346c343d362b9, type: 3}
+  - name: Undead Executioner
+    sprite: {fileID: 21300000, guid: b8cf15e84b4280448a7921e247b452f4, type: 3}
