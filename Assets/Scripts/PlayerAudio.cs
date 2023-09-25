@@ -1,7 +1,9 @@
+//PlayerAudio.cs by Joseph Panara for Night Knight
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Handles audio for all player actions
 public class PlayerAudio : MonoBehaviour
 {
     private Animator anim;
@@ -33,7 +35,7 @@ public class PlayerAudio : MonoBehaviour
     public float dievolume = 1;
 
     [HideInInspector] public AudioSource runsource;
-    // Start is called before the first frame update
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -46,7 +48,6 @@ public class PlayerAudio : MonoBehaviour
         runsource.loop = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerRun"))
@@ -57,19 +58,16 @@ public class PlayerAudio : MonoBehaviour
         {
                 runsource.Stop();
                 isPlaying = false;
-            
         }
     }
 
     public void RunAud()
     {
-        
         if (isPlaying == false)
         {
             runsource.Play();
             isPlaying = true;
         }
-        
     }
     public void JumpAud()
     {

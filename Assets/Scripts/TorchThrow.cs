@@ -1,9 +1,10 @@
-//DIG3878 Night Knight Final TorchThrow.cs by Torchlight Co.
+//TorchThrow.cs by Joseph Panara for Night Knight
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This script handles the torch throw mechanic
 public class TorchThrow : MonoBehaviour
 {
     private Camera cam;
@@ -24,6 +25,7 @@ public class TorchThrow : MonoBehaviour
     [Tooltip("How long the torch lasts before disappearing.")]
     public float lifespan;
     private PlayerAudio audio;
+    //torchnum is used if you want the player to have a limited number of torches
     //public int torchnum;
 
     void Start()
@@ -31,6 +33,7 @@ public class TorchThrow : MonoBehaviour
         cam = Camera.main;
         audio = GetComponent<PlayerAudio>();
     }
+    //While right-click is held, force increases. On release, a torch prefab is instantiated and launched with the throwforce at the direction of the mouse cursor
     void Update()
     {
         Vector3 screenPoint = cam.WorldToScreenPoint(transform.position);
@@ -64,11 +67,13 @@ public class TorchThrow : MonoBehaviour
         }
 
     }
+    //Applies a cooldown on how fast torches can be thrown
     private IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(cooldown);
         canthrow = true;
     }
+    //Destroys the torch after a set time
     private IEnumerator TorchDecay()
     {
         yield return new WaitForSeconds(lifespan);

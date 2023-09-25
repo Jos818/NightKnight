@@ -1,7 +1,9 @@
+//LightableObj.cs by Joseph Panara for Night Knight
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Handles the behavior for objects that can be lit by the throwable torch
 public class LightableObj : MonoBehaviour
 {
     private GameObject _light;
@@ -12,6 +14,7 @@ public class LightableObj : MonoBehaviour
     private Sprite normalsprite;
     private AudioSource audio;
 
+    //Gets the light components and disables them
     void Start()
     {
 
@@ -26,6 +29,7 @@ public class LightableObj : MonoBehaviour
         audio = GetComponent<AudioSource>();
     }
 
+    //Lights the object when a throwable torch interacts with it
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Torch"))
@@ -34,6 +38,7 @@ public class LightableObj : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+    //Enabled the light components and plays any animations
     public void Light()
     {
         _light.SetActive(true);
@@ -42,6 +47,7 @@ public class LightableObj : MonoBehaviour
         lit = true;
         trigger.enabled = false;
     }
+    //Reverts the object to its unlit state
     public void Unlight()
     {
         lit = false;

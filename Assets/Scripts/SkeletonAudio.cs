@@ -1,7 +1,9 @@
+//SkeletonAudio.cs by Joseph Panara for Night Knight
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Handles audio for all Skeleton behaviors
 public class SkeletonAudio : MonoBehaviour
 {
     private Animator anim;

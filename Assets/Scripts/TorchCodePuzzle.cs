@@ -1,9 +1,15 @@
-//DIG3878 Night Knight Final TorchCodePuzzle.cs by Torchlight Co.
-
+//TorchCodePuzzle.cs by Joseph Panara for Night Knight
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Handles the puzzle door at the end of Level 2
+//The puzzle is composed of 2 sets of torches and a door
+//The script takes the number of torches in the "lights" list, and generates a code, where some of the torches will need to be lit to open the door
+//The number of torches that need to be lit is equal to codesize
+//The puzzle also has the list "examples" list, which should have an equal number of objects as "lights"
+//Each torch in "lights" has an equivalent torch in "examples". If the torch in "lights" is part of the code, the corresponding light in "examples" will be lit
+//The remaining torches in "examples" will be unlit, and if lit by the player will deactivate autoamtically
 public class TorchCodePuzzle : MonoBehaviour
 {
     [Tooltip("Put all possible lights used for the puzzle here.")]
@@ -22,13 +28,16 @@ public class TorchCodePuzzle : MonoBehaviour
     [Header("Set to true if you want the code to change on a wrong answer.")]
     public bool randomizewrong;
 
+    //Closes the door and generates a random code
     void Start()
     {
         GetComponent<Animator>().SetBool("Open", false);
         CodeGen();
     }
+
     void Update()
     {
+        //Lights the example torches in the earlier part of the level
         foreach (LightableObj example in examples)
         {
             if (code.Contains(examples.IndexOf(example)) && example.lit == false)
@@ -38,14 +47,7 @@ public class TorchCodePuzzle : MonoBehaviour
         }
         if (wrong == false && right == false)
         {
-            /*foreach (LightableObj light in wronglights)
-            {
-                if (light.lit == true)
-                {
-                    wrong = true;
-                    StartCoroutine(WrongCode());
-                }
-            }*/
+        
             foreach (LightableObj light in lights)
             {
                 //Adds light index to codecheck if not already present
@@ -75,6 +77,7 @@ public class TorchCodePuzzle : MonoBehaviour
             }
 
         }
+        //If the player lights one of the unlit example torches, it unlights it so the player can go back and see the correct code
         foreach (LightableObj example in examples)
         {
             if (!code.Contains(examples.IndexOf(example)) && example.lit == true)
@@ -82,6 +85,7 @@ public class TorchCodePuzzle : MonoBehaviour
                 StartCoroutine(PreserveExample(example));
             }
         }
+        //All lights are lit once the puzzle is solved
         if (wrong == false && right == true)
         {
             foreach (LightableObj light in lights)
@@ -91,7 +95,7 @@ public class TorchCodePuzzle : MonoBehaviour
                     light.Light();
                 }
             }
-            //Set whatever happens when the puzzle is solved here.
+            //Set whatever happens when the puzzle is solved here
             gameObject.GetComponent<Animator>().SetBool("Open", true);
         }
     }
@@ -112,6 +116,7 @@ public class TorchCodePuzzle : MonoBehaviour
             //codeText.text += randomnum.ToString();
             //Debug.Log(randomnum);
         }
+        //Creates the example pattern with a separate set of lights that is used as the solution to the puzzle
         foreach (LightableObj example in examples)
         {
             if (code.Contains(examples.IndexOf(example)))
@@ -119,13 +124,7 @@ public class TorchCodePuzzle : MonoBehaviour
                 example.Light();
             }
         }
-        /*foreach (LightableObj light in lights)
-        {
-            if (!code.Contains(lights.IndexOf(light)))
-            {
-                wronglights.Add(light);
-            }
-        }*/
+       
     }
     //Resets puzzle on wrong answer
     IEnumerator WrongCode()

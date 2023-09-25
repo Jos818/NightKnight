@@ -1,0 +1,1 @@
+All scripts outside of the Other Scripts folder are written by Joseph Panara.

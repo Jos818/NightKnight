@@ -1,7 +1,9 @@
+//SummonAudio.cs by Joseph Panara for Night Knight
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Handles audio for all "Summon Enemy" behaviors
 public class SummonAudio : MonoBehaviour
 {
     private Animator anim;
@@ -9,18 +11,13 @@ public class SummonAudio : MonoBehaviour
     [SerializeField] private AudioClip death;
     [Range(0, 1)]
     public float deathvolume = 1;
-    // Start is called before the first frame update
+
     void Start()
     {
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void DeathAud()
     {
         audio.Stop();
